@@ -80,7 +80,7 @@ def stopService(server, service):
 
 def getStatus():
     ip = city = asn_org = None
-    stdOut = subprocess.getoutput('curl -s ifconfig.co/json')
+    stdOut = subprocess.getoutput('curl -4 -s ifconfig.co/json')
     if stdOut:
         print(f'Current internet connection:\n{stdOut}\n')
         outDict = json.loads(stdOut)
